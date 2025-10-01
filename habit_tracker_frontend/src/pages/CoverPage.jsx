@@ -13,6 +13,7 @@ import './cover.css';
  * - Images are served from /assets/... in public; update import paths accordingly if moved.
  * - Avoid direct document/window global handlers outside useEffect to maintain React safety.
  */
+// PUBLIC_INTERFACE
 export default function CoverPage() {
   const toggleRef = useRef(null);
   const navRef = useRef(null);
@@ -59,6 +60,12 @@ export default function CoverPage() {
     };
   }, [onToggle]);
 
+  const onImgError = (path) => (e) => {
+    // Graceful degrade: keep layout, show subtle missing state and useful alt text
+    e.currentTarget.style.opacity = '0.2';
+    e.currentTarget.alt = `Image missing: ${path}`;
+  };
+
   return (
     <div className="cover-root">
       <main id="cover" aria-label="Cover">
@@ -76,15 +83,27 @@ export default function CoverPage() {
 
           {/* Three device preview rectangles: images relocated into public/assets/figmaimages */}
           <figure className="shot shot-0">
-            <img src="/assets/figma_image_0_8.png" alt="Home-2 screen" />
+            <img
+              src="/assets/figma_image_0_8.png"
+              alt="Home-2 screen"
+              onError={onImgError('/assets/figma_image_0_8.png')}
+            />
           </figure>
 
           <figure className="shot shot-1">
-            <img src="/assets/figma_image_0_9.png" alt="Your Goals Detail Process screen" />
+            <img
+              src="/assets/figma_image_0_9.png"
+              alt="Your Goals Detail Process screen"
+              onError={onImgError('/assets/figma_image_0_9.png')}
+            />
           </figure>
 
           <figure className="shot shot-2">
-            <img src="/assets/figma_image_0_10.png" alt="Home screen" />
+            <img
+              src="/assets/figma_image_0_10.png"
+              alt="Home screen"
+              onError={onImgError('/assets/figma_image_0_10.png')}
+            />
           </figure>
         </section>
 

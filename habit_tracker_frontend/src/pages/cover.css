@@ -1,6 +1,7 @@
 /* Namespaced Cover stylesheet based on assets/styles.css
    All rules are wrapped under .cover-root to prevent global CSS conflicts with the app.
    If you add new rules, keep the .cover-root prefix.
+   Note: Images referenced by the CoverPage are served from /assets/... via CRA public/ folder.
 */
 
 .cover-root {
@@ -154,6 +155,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(17,24,39,0.04),
+    rgba(17,24,39,0.04) 10px,
+    rgba(17,24,39,0.06) 10px,
+    rgba(17,24,39,0.06) 20px
+  );
 }
 
 /* shot-0 */

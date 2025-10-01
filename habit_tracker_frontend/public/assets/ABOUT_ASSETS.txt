@@ -1,0 +1,3 @@
+All images in this folder are served by the React dev server at absolute paths like /assets/filename.png.
+Use absolute paths in JSX: <img src="/assets/your_image.png" alt="" />.
+Do not import via JS for these static design mocks.
