@@ -51,7 +51,7 @@ export default function App() {
               <Header />
               <div className="content">
                 <Routes>
-                  <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                  <Route path="/" element={<Navigate to="/cover" replace />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/habits" element={<Habits />} />
                   <Route path="/cover" element={<CoverPage />} />
