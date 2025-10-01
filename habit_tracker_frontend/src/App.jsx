@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Dashboard from './pages/Dashboard';
 import Habits from './pages/Habits';
+import CoverPage from './pages/CoverPage';
 
 // Simple Error Boundary
 class ErrorBoundary extends React.Component {
@@ -53,6 +54,7 @@ export default function App() {
                   <Route path="/" element={<Navigate to="/dashboard" replace />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/habits" element={<Habits />} />
+                  <Route path="/cover" element={<CoverPage />} />
                   <Route path="*" element={<Navigate to="/dashboard" replace />} />
                 </Routes>
               </div>

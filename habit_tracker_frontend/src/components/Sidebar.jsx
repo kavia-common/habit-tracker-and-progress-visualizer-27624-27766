@@ -18,6 +18,9 @@ export default function Sidebar() {
         <NavLink to="/habits" className={({ isActive }) => isActive ? 'active' : ''} aria-label="Habits">
           <span>✅</span> <span>Habits</span>
         </NavLink>
+        <NavLink to="/cover" className={({ isActive }) => isActive ? 'active' : ''} aria-label="Cover">
+          <span>🎨</span> <span>Cover</span>
+        </NavLink>
       </nav>
     </aside>
   );
