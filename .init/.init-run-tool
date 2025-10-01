@@ -1,0 +1,4 @@
+{
+    "command": "PORT=<port> HOST=<host> BROWSER=none npm start",
+    "working_directory": "/home/kavia/workspace/code-generation/habit-tracker-and-progress-visualizer-27624-27766/habit_tracker_frontend"
+}
