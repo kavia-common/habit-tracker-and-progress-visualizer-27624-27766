@@ -5,6 +5,8 @@ import WeeklyBarChart from '../components/Charts/WeeklyBarChart';
 import { computeWeeklyCompletion, motivationalMessage } from '../utils/metrics';
 import { getISODate, getWeekRange } from '../utils/date';
 import HabitList from '../components/HabitList';
+import HabitCard from '../components/HabitCard';
+import VacationSettings from '../components/VacationSettings';
 
 export default function Dashboard() {
   const { habits } = useHabits();
@@ -51,6 +53,14 @@ export default function Dashboard() {
 
       <WeeklyBarChart data={dailyTotals} labels={dayLabels} />
 
+      {/* New: Rich cards with checklist */}
+      <div className="grid">
+        {habits.map(h => <HabitCard key={h.id} id={h.id} />)}
+        {habits.length === 0 && <div className="card"><div className="helper">No habits yet. Use the Habits page to create one.</div></div>}
+      </div>
+
+      <VacationSettings />
+      {/* Keep legacy HabitList for navigation page */}
       <HabitList showHeader />
     </div>
   );

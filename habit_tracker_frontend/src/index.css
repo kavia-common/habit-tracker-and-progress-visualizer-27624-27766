@@ -16,6 +16,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button { transition: all .2s ease; }
+
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
